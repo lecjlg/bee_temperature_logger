@@ -52,4 +52,4 @@ with open(outfile,'a') as f:
       f.write(datetime.utcnow().isoformat() + ',' + str(read_temp()) + '\n' ) #write the data to a string and to the output file
       print(read_temp())
       f.flush() #force the system to write the file to disk
-      time.sleep(1)
+      time.sleep(30)
