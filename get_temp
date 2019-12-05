@@ -4,10 +4,24 @@
 dir="/sys/devices/w1_bus_master1/28-041690a097ff"
 
 
+
+while :
+do
+
+
 temp=`cat $dir/w1_slave |tail -1 |awk -F "=" '{print $2}'`
 
 
 echo "scale=2; $temp/1000" | bc -l
+
+
+done
+
+
+
+
+
+
 
 
 
