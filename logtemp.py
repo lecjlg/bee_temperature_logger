@@ -1,7 +1,11 @@
+#!/usr/bin/env python
+
 # Import Libraries
 import os
 import glob
 import time
+
+outfile='/opt/beelogger/temperature-log.csv'
  
 # Initialize the GPIO Pins
 os.system('modprobe w1-gpio')  # Turns on the GPIO module
