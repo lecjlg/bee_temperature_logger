@@ -46,6 +46,7 @@ def read_temp():
     return temp_c, temp_f
  
 # Print out the temperature until the program is stopped.
-while True:
-  print(read_temp())
-  time.sleep(1)
+with open(outfile,'a') as f:
+    while True:
+      print(read_temp())
+      time.sleep(1)
