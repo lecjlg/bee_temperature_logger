@@ -48,7 +48,7 @@ def read_temp():
 # Print out the temperature until the program is stopped.
 with open(outfile,'a') as f:
     while True:
-      f.write(str(read_temp()) + '\n' )
+      f.write(str(read_temp()) + '\n' ) #write the data to a string and to the output file
       print(read_temp())
-      f.flush()
+      f.flush() #force the system to write the file to disk
       time.sleep(1)
