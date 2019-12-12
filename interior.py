@@ -6,7 +6,7 @@ import glob
 import time
 from datetime import datetime
 
-outfile='/opt/beelogger/temperature-log.csv'
+outfile='/data/interior/interior_temperature-log.csv'
  
 # Initialize the GPIO Pins
 os.system('modprobe w1-gpio')  # Turns on the GPIO module
@@ -14,7 +14,7 @@ os.system('modprobe w1-therm') # Turns on the Temperature module
  
 # Finds the correct device file that holds the temperature data
 base_dir = '/sys/bus/w1/devices/'
-device_folder = glob.glob(base_dir + '28*')[0]
+device_folder = glob.glob(base_dir + '28-03*')[0]
 device_file = device_folder + '/w1_slave'
  
 # A function that reads the sensors data
