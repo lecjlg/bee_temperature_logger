@@ -4,9 +4,13 @@
 import os
 import glob
 import time
+import datetime
 from datetime import datetime
+from datetime import date
 
-outfile='/data/interior/interior_temperature-log.csv'
+filedate = date.today()
+
+outfile='/data/interior/'+ str(filedate) + '-' + 'interior_temperature-log.csv'
  
 # Initialize the GPIO Pins
 os.system('modprobe w1-gpio')  # Turns on the GPIO module
