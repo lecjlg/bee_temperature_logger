@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#---Kill both logger scripts
+pkill -f external.py
+pkill -f interior.py
+
+#--Run the external temperature sensor logger script
+python /opt/beelogger/external.py &
+
+#--Run the interior temperature sensor logger script
+python /opt/beelogger/interior.py &
