@@ -4,9 +4,11 @@
 import os
 import glob
 import time
+import datetime
 from datetime import datetime
+from datetime import date
 
-filedate = datetime.utcnow()
+filedate = date.today()
 
 outfile='/data/external/'+ str(filedate) + '-' + 'external-temperature-log.csv'
  
@@ -45,13 +47,11 @@ def read_temp():
   if equals_pos != -1:
     temp_string = lines[1][equals_pos+2:]
     temp_c = float(temp_string) / 1000.0
-   #temp_f = temp_c * 9.0 / 5.0 + 32.0
     return temp_c
 
 # Print out the temperature until the program is stopped.
 with open(outfile,'a') as f:
     while True:
       f.write(datetime.utcnow().isoformat() + ',' + str(read_temp()) + '\n' ) #write the data to a string and to the output file
-      print(read_temp())
       f.flush() #force the system to write the file to disk
       time.sleep(30)
