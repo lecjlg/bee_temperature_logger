@@ -6,7 +6,9 @@ import glob
 import time
 from datetime import datetime
 
-outfile='/data/external/external-temperature-log.csv'
+filedate = datetime.utcnow()
+
+outfile='/data/external/'+ str(filedate) + '-' + 'external-temperature-log.csv'
  
 # Initialize the GPIO Pins
 os.system('modprobe w1-gpio')  # Turns on the GPIO module
