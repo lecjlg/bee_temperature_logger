@@ -186,7 +186,7 @@ def main():
   humidity = str(humidity)
 
   
-  f.write(datetime.utcnow().isoformat() + ',' + temperature + '\n' ) 
+  f.write(datetime.utcnow().isoformat() + ',' + temperature + ',' + pressure + ',' + humidity + '\n' ) 
 
 if __name__=="__main__":
    main()
