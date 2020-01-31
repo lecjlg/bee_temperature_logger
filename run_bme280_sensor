@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#!/bin/bash
+while :
+   do
+   python /opt/beelogger/bme280.py
+   sleep 10
+   done
