@@ -23,6 +23,19 @@ import time
 from ctypes import c_short
 from ctypes import c_byte
 from ctypes import c_ubyte
+import time
+import datetime
+from datetime import datetime
+from datetime import date
+
+filedate = date.today()
+
+outfile='/data/bme280/'+ str(filedate) + '-' + 'bme280.csv'
+
+f=open(outfile,'a')
+
+
+
 
 DEVICE = 0x77 # Default device I2C address
 
@@ -167,6 +180,13 @@ def main():
   print "Temperature : ", temperature, "C"
   print "Pressure : ", pressure, "hPa"
   print "Humidity : ", humidity, "%"
+
+  temperature = str(temperature)  # float -> str
+  pressure = str(pressure)
+  humidity = str(humidity)
+
+  
+  f.write(datetime.utcnow().isoformat() + ',' + temperature + '\n' ) 
 
 if __name__=="__main__":
    main()
