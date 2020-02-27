@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/bash
 while :
    do
    python /opt/beelogger/bme280.py
