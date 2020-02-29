@@ -18,8 +18,8 @@ if automationhat.is_automation_hat():
     automationhat.light.power.write(1)
 with open(outfile,'a') as f:
     while True:
-    
+        f.write(datetime.utcnow().isoformat() + ',' + str(automationhat.analog.read()) + '\n') 
         
-        print(automationhat.input.read())
         print(automationhat.analog.read())
         time.sleep(0.5)
+        f.flush()
