@@ -20,6 +20,6 @@ with open(outfile,'a') as f:
     while True:
         f.write(datetime.utcnow().isoformat() + ',' + str(automationhat.analog.read()) + '\n') 
         
-        print(automationhat.analog.read())
+        #print(automationhat.analog.read())
         time.sleep(0.5)
         f.flush()
