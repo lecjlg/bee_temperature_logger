@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+ps -eaf | grep -i python |grep sht_log.py
+# if not found - equals to 1, start it
+if [ $? -eq 1 ]
+then
+echo "starting sht logger"
+python /opt/beelogger/sht_log.py &
+else
+echo "eq 0 - sht alreeady running - do nothing"
+fi
+
+exit 1
+
+ps -eaf | grep -i python |grep bme280.py 
+
+# if not found - equals to 1, start it
+if [ $? -eq 1 ]
+then
+echo "starting bme logger"
+/opt/beelogger/run_bme280_sensor &
+else
+echo "eq 0 - bme alreeady running - do nothing"
+fi
+
