@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#---script to archive files older than a month to an archive directory
+
+find /data/battery/ -type f  -mtime +30 -exec mv {} /data/battery/archive \; 
