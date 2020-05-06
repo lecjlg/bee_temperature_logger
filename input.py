@@ -21,5 +21,5 @@ with open(outfile,'a') as f:
         f.write(datetime.utcnow().isoformat() + ',' + str(automationhat.analog.read()) + '\n') 
         
         #print(automationhat.analog.read())
-        time.sleep(0.5)
+        time.sleep(60)
         f.flush()
